@@ -44,5 +44,5 @@ class StatisticsDisplay(Observer, DisplayElement):
         '''
         Displays this element's info
         '''
-        print "Avg/Max/Min temperature = " + str(self.tempSum / self.numReadings) + "/" + str(self.maxTemp) + "/" + str(self.minTemp)
+        print("Avg/Max/Min temperature = " + str(self.tempSum / self.numReadings) + "/" + str(self.maxTemp) + "/" + str(self.minTemp))
 

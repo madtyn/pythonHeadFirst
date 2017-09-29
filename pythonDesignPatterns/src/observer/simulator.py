@@ -16,7 +16,7 @@ if __name__ == '__main__':
     statisticsDisplay = StatisticsDisplay(weatherData)
     forecastDisplay = ForecastDisplay(weatherData)
 
-    print
+    print()
 
     # When the measurements of the weatherData change, the observers get notified and print the data
     weatherData.setMeasurements(80, 65, 30.4)

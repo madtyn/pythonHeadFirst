@@ -31,7 +31,7 @@ class WeatherData(Subject):
         try:
             return self.observers.remove(observer)
         except ValueError:
-            print 'Observer not found: ', str(observer)
+            print('Observer not found: ', str(observer))
 
 
     def notifyObservers(self):
