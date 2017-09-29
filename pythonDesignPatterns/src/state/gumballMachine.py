@@ -35,7 +35,7 @@ class GumballMachine:
         self.state = state
 
     def releaseBall(self):
-        print "A gumball comes rolling out the slot..."
+        print("A gumball comes rolling out the slot...")
         if (self.count != 0):
             self.count = self.count - 1
 

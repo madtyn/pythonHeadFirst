@@ -26,16 +26,16 @@ class HasQuarterState(State):
 
 
     def insertQuarter(self):
-        print "You can't insert another quarter"
+        print("You can't insert another quarter")
 
 
     def ejectQuarter(self):
-        print "Quarter returned"
+        print("Quarter returned")
         self.gumballMachine.setState(self.gumballMachine.getNoQuarterState())
 
 
     def turnCrank(self):
-        print "You turned..."
+        print("You turned...")
 
         from random import randint
         winner = randint(0, 9)
@@ -45,7 +45,7 @@ class HasQuarterState(State):
             self.gumballMachine.setState(self.gumballMachine.getSoldState())
 
     def dispense(self):
-        print "No gumball dispensed"
+        print("No gumball dispensed")
 
 
     def __str__(self):
@@ -58,20 +58,20 @@ class NoQuarterState(State):
 
 
     def insertQuarter(self):
-        print "You inserted a quarter"
+        print("You inserted a quarter")
         self.gumballMachine.setState(self.gumballMachine.getHasQuarterState())
 
 
     def ejectQuarter(self):
-        print "You haven't inserted a quarter"
+        print("You haven't inserted a quarter")
 
 
     def turnCrank(self):
-        print "You turned, but there's no quarter"
+        print("You turned, but there's no quarter")
 
 
     def dispense(self):
-        print "You need to pay first"
+        print("You need to pay first")
 
 
     def __str__(self):
@@ -84,19 +84,19 @@ class SoldOutState(State):
 
 
     def insertQuarter(self):
-        print "You can't insert a quarter, the machine is sold out"
+        print("You can't insert a quarter, the machine is sold out")
 
 
     def ejectQuarter(self):
-        print "You can't eject, you haven't inserted a quarter yet"
+        print("You can't eject, you haven't inserted a quarter yet")
 
 
     def turnCrank(self):
-        print "You turned, but there are no gumballs"
+        print("You turned, but there are no gumballs")
 
 
     def dispense(self):
-        print "No gumball dispensed"
+        print("No gumball dispensed")
 
 
     def __str__(self):
@@ -109,15 +109,15 @@ class SoldState(State):
 
 
     def insertQuarter(self):
-        print "Please wait, we're already giving you a gumball"
+        print("Please wait, we're already giving you a gumball")
 
 
     def ejectQuarter(self):
-        print "Sorry, you already turned the crank"
+        print("Sorry, you already turned the crank")
 
 
     def turnCrank(self):
-        print "Turning twice doesn't get you another gumball!"
+        print("Turning twice doesn't get you another gumball!")
 
 
     def dispense(self):
@@ -125,7 +125,7 @@ class SoldState(State):
         if (self.gumballMachine.getCount() > 0):
             self.gumballMachine.setState(self.gumballMachine.getNoQuarterState())
         else:
-            print "Oops, out of gumballs!"
+            print("Oops, out of gumballs!")
             self.gumballMachine.setState(self.gumballMachine.getSoldOutState())
 
 
@@ -141,19 +141,19 @@ class WinnerState(State):
 
 
     def insertQuarter(self):
-        print "Please wait, we're already giving you a Gumball"
+        print("Please wait, we're already giving you a Gumball")
 
 
     def ejectQuarter(self):
-        print "Please wait, we're already giving you a Gumball"
+        print("Please wait, we're already giving you a Gumball")
 
 
     def turnCrank(self):
-        print "Turning again doesn't get you another gumball!"
+        print("Turning again doesn't get you another gumball!")
 
 
     def dispense(self):
-        print "YOU'RE A WINNER! You get two gumballs for your quarter"
+        print("YOU'RE A WINNER! You get two gumballs for your quarter")
         self.gumballMachine.releaseBall()
         if self.gumballMachine.getCount() == 0:
             self.gumballMachine.setState(self.gumballMachine.getSoldOutState())
@@ -162,7 +162,7 @@ class WinnerState(State):
             if self.gumballMachine.getCount() > 0:
                 self.gumballMachine.setState(self.gumballMachine.getNoQuarterState())
             else:
-                print "Oops, out of gumballs!"
+                print("Oops, out of gumballs!")
                 self.gumballMachine.setState(self.gumballMachine.getSoldOutState())
 
     def __str__(self):
